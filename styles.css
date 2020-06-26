@@ -81,9 +81,6 @@ body {
 }
 
 @media only screen and (max-width: 960px) {
-  .container {
-    height: auto;
-  }
   #clock {
     margin-top: 1em;
   }
