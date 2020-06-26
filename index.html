@@ -43,12 +43,12 @@
     </div>
 
     <script>
-      var search=false;
+      var searching=false;
         // Search on enter key event
         function search(e) {
             if (e.keyCode == 13) {
                 var val = document.getElementById("search-field").value;
-                window.open("https://google.com/search?q=" + val);
+                window.location.assign("https://google.com/search?q=" + val);
             }
         }
         // Get current time and format
@@ -90,29 +90,29 @@
         }
 
         document.addEventListener("keydown", event => {
-            if (event.keyCode == 32) {          // Spacebar code to open search
-                search=true;
-                document.getElementById('search').style.display = 'flex';
-                document.getElementById('search-field').focus();
-            } else if (event.keyCode == 27) {   // Esc to close search
-                search=false;
-                document.getElementById('search-field').value = '';
-                document.getElementById('search-field').blur();
-                document.getElementById('search').style.display = 'none';
-            } else if(search == true) {}
-	    } else if (event.keyCode == 73) {  // I to inbox
-	        window.location.assign("https://mail.google.com");
-	    } else if (event.keyCode == 71) {  // G to github
-	        window.location.assign("https://github.com");
-	    } else if (event.keyCode == 68) {  // D to drive
-	        window.location.assign("https://drive.google.com");
-	    } else if (event.keyCode == 89) {  // Y to youtube
-	        window.location.assign("https://youtube.com");
-	    } else if (event.keyCode == 78) {  // N to netflix
-	        window.location.assign("https://netflix.com");
-	    } else if (event.keyCode == 72) {  // H to hulu
-	        window.location.assign("https://hulu.com");
-	    }
+          if (event.keyCode == 32) {          // Spacebar code to open search
+              searching=true;
+              document.getElementById('search').style.display = 'flex';
+              document.getElementById('search-field').focus();
+          } else if (event.keyCode == 27) {   // Esc to close search
+              document.getElementById('search-field').value = '';
+              document.getElementById('search-field').blur();
+              document.getElementById('search').style.display = 'none';
+              searching=false;
+          } else if (searching == true) {
+          } else if (event.keyCode == 73) {  // I to inbox
+              window.location.assign("https://mail.google.com");
+          } else if (event.keyCode == 71) {  // G to github
+              window.location.assign("https://github.com");
+          } else if (event.keyCode == 68) {  // D to drive
+              window.location.assign("https://drive.google.com");
+          } else if (event.keyCode == 89) {  // Y to youtube
+              window.location.assign("https://youtube.com");
+          } else if (event.keyCode == 78) {  // N to netflix
+              window.location.assign("https://netflix.com");
+          } else if (event.keyCode == 72) {  // H to hulu
+              window.location.assign("https://hulu.com");
+          }
         });
     </script>
 </body>
